@@ -1,6 +1,12 @@
+body {
+    background:grey;
+}
+
 .container-timer-score {
+    background-image: url(https://images.pexels.com/photos/1764702/pexels-photo-1764702.jpeg?cs=srgb&dl=architecture-art-background-1764702.jpg&fm=jpg);
     display: flex;
     justify-content: space-between; 
+    opacity: .5;
 }
 
 .start-btn-row {
@@ -9,6 +15,11 @@
 }
 
 .user-hs-initials {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
+
+.userInitialInput {
+    width: auto;
+    border-radius: 5px;
+}
+
