@@ -1,12 +1,10 @@
-.timer {
-    float: right; 
+.container-timer-score {
+    display: flex;
+    justify-content: space-between; 
 }
 
-.score {
-    float: left;
+.start-btn-row {
+    display: flex;
+    justify-content: center;
 }
-
-.clearfix::after {
-    clear: both;
-  }
 
