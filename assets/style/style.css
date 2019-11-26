@@ -1,0 +1,12 @@
+.timer {
+    float: right; 
+}
+
+.score {
+    float: left;
+}
+
+.clearfix::after {
+    clear: both;
+  }
+
