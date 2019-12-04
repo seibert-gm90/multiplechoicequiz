@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Multiple Choice Quiz</title>
     <link rel="stylesheet" href="assets/style/style.css">
+
 </head>
 
 <body>
     <container class="mainContainer">
         <div class="container-timer-score row">
-            <div class="timer col-lg-6">
+            <div id="timer" class="col-lg-6">
                 <p> Timer </p>
             </div>
             <div class="score col-lg-6">
@@ -23,31 +24,45 @@
         <div class="row start-btn-row">
             <div class="col-lg-6">
 
-                <button type="button" class="startbtn btn-secondary btn-center">Start Quiz</button>
-                <button type="button" class="hsbtn btn-secondary btn-center">High Scores</button>
+                <button type="button" id="startbtn" class= "btn-secondary btn-center">Start Quiz</button>
+                <button type="button" id="highScoreBtn" class="hsbtn btn-secondary btn-center">High Scores</button>
+                
                 <br>
                 <br>
+
+                <h1 id= "title"></h1>
+                <h1 id= "correctAnswer"></h1>
+
+                <div id="choice1"></div>
+                <div id="choice2"></div>
+                <div id="choice3"></div>
+                <div id="choice4"></div>
+                <div id="choice5"></div>
+
 
             </div>
         </div>
         <div class=" row">
             <div class="col-lg-6">
+                <div class="quizContainer" id="quiz">
+
+                </div>
                 <form class="user-hs-initials">
                     <p>Please type your initials below to save your high score. </p>
-                    <input type="text" name="userInitialHS" class="userInitialInput"
-                        value="Initials go here">
-                        <br>
-                        <br>
-                    <input type="submit" class="saveBtn" value="Save">
+                    <input type="text" name="userInitialHS" class="userInitialInput" value="Initials go here">
+                    <br>
+                    <br>
+                    <input type="submit" class="saveBtn" id="submit" value="Save">
                 </form>
-            </div> 
+            </div>
         </div>
     </container>
-    <container class="questionsContainer">
+    <container class="resultsContainer" id="results">
         <p>
             alfkjdslkafjlkdjfalkj
         </p>
     </container>
+    <script src = "assets/scripts/script.js"> </script>
 </body>
 
 </html>
