@@ -112,7 +112,7 @@ function nextQuestion(event) {
 
    else {
       userRightWrong = "Incorrect"
-      //add time penalty add -10
+       timer.textContent -= 10
    }
 
    document.getElementById("correctAnswer").textContent = userRightWrong
