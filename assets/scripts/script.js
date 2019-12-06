@@ -1,6 +1,7 @@
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
+var userInitialInput = document.getElementById('initials');
 
 var questions = [
    {
@@ -47,7 +48,7 @@ var interval;
 timer.innerText = '75';
 
 
-//start timer and show questions function//
+//event listener to start timer and show questions function//
 document.getElementById("startbtn").addEventListener("click", startTimer)
 
 function countdownTimer() {
@@ -64,7 +65,7 @@ function countdownTimer() {
 }
 
 
-
+//function calling timer to start and questions to run
 function startTimer() {
 
    showQuestions()
@@ -127,13 +128,23 @@ function nextQuestion(event) {
 
 //print remaining time to score element
 
+var score = seconds
+
 function printScore() {
   
    if (i === questions.length) {
-      var score = seconds
       document.getElementById("score").textContent = score
       seconds = 1
    }
+}
+submitButton.addEventListener("click", storeHS)
+function storeHS (){
+   event.preventDefault();
+   var userInitials = userInitialInput.value;
+   var userObject = {userInitials:userInitials, score:score }
+   console.log(userObject)
+   
+
 }
 
 
