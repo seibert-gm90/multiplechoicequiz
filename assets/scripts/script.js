@@ -47,10 +47,10 @@ var interval;
 timer.innerText = '75';
 
 
-//start timer//
+//start timer and show questions function//
 document.getElementById("startbtn").addEventListener("click", startTimer)
 
-function pomodoro() {
+function countdownTimer() {
 
    interval = setInterval(function () {
       seconds--;
@@ -59,23 +59,23 @@ function pomodoro() {
          clearInterval(interval);
       }
       timer.textContent = seconds;
-      
+
    }, 1000)
 }
 
 
 
 function startTimer() {
-  
+
    showQuestions()
-   pomodoro()
+   countdownTimer()
 }
 
 
-
+//function to show questions
 var i = 0
 
-function showQuestions() { 
+function showQuestions() {
 
    if (i === questions.length) {
       document.getElementById("title").textContent = "";
@@ -83,24 +83,28 @@ function showQuestions() {
       document.getElementById("choice2").textContent = "";
       document.getElementById("choice3").textContent = "";
       document.getElementById("choice4").textContent = "";
-      return;}
+      printScore();
+      return;
+   }
 
    document.getElementById("title").textContent = questions[i].title;
    document.getElementById("choice1").textContent = questions[i].choices[0];
    document.getElementById("choice2").textContent = questions[i].choices[1];
    document.getElementById("choice3").textContent = questions[i].choices[2];
    document.getElementById("choice4").textContent = questions[i].choices[3];
-  
+
 }
 
 
 
-
+//event listener to show next question
 
 document.getElementById("choice1").addEventListener("click", nextQuestion)
 document.getElementById("choice2").addEventListener("click", nextQuestion)
 document.getElementById("choice3").addEventListener("click", nextQuestion)
 document.getElementById("choice4").addEventListener("click", nextQuestion)
+
+//function for alerting user if they answered correctly or incorrectly
 
 var userRightWrong;
 
@@ -112,7 +116,7 @@ function nextQuestion(event) {
 
    else {
       userRightWrong = "Incorrect"
-       timer.textContent -= 10
+      seconds -= 10
    }
 
    document.getElementById("correctAnswer").textContent = userRightWrong
@@ -121,6 +125,16 @@ function nextQuestion(event) {
 
 }
 
+//print remaining time to score element
+
+function printScore() {
+  
+   if (i === questions.length) {
+      var score = seconds
+      document.getElementById("score").textContent = score
+      seconds = 1
+   }
+}
 
 
 
