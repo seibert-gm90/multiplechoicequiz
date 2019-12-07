@@ -45,7 +45,7 @@ var questions = [
 var seconds = 75;
 var timer = document.getElementById("timer")
 var interval;
-timer.innerText = '75';
+timer.innerText = seconds;
 
 
 //event listener to start timer and show questions function//
@@ -60,7 +60,7 @@ function countdownTimer() {
          clearInterval(interval);
       }
       timer.textContent = seconds;
-
+      console.log(seconds)
    }, 1000)
 }
 
@@ -128,22 +128,23 @@ function nextQuestion(event) {
 
 //print remaining time to score element
 
-var score = seconds
+//var score = seconds
 
 function printScore() {
   
    if (i === questions.length) {
-      document.getElementById("score").textContent = score
-      seconds = 1
+      document.getElementById("score").textContent = seconds
+     clearTimeout(interval);
+     console.log(score)
    }
 }
 submitButton.addEventListener("click", storeHS)
 function storeHS (){
    event.preventDefault();
    var userInitials = userInitialInput.value;
-   var userObject = {userInitials:userInitials, score:score }
+   var userObject = {userInitials:userInitials, score:seconds }
    console.log(userObject)
-   
+
 
 }
 
